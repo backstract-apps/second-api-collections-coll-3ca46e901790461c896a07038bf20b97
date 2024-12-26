@@ -1,0 +1,22 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: second-api-collections-coll-3ca46e901790461c896a07038bf20b97-depl
+  labels:
+    app: second-api-collections-coll-3ca46e901790461c896a07038bf20b97
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: second-api-collections-coll-3ca46e901790461c896a07038bf20b97
+  template:
+    metadata:
+      labels:
+        app: second-api-collections-coll-3ca46e901790461c896a07038bf20b97
+    spec:
+      containers:
+        - name: second-api-collections-coll-3ca46e901790461c896a07038bf20b97
+          image: 216084506783.dkr.ecr.ap-south-1.amazonaws.com/backstract_apps:second-api-collections-coll-3ca46e901790461c896a07038bf20b97
+          imagePullPolicy: Always
+          ports:
+            - containerPort: 9041
